@@ -10,8 +10,8 @@ export const Nav10DataSource = {
   Menu: {
     className: 'header1-menu',
     children: [
-      { name: 'item0', a: { children: '导航一', href: '' } },
-      { name: 'item1', a: { children: '导航二', href: '' } },
+      { name: 'item0', a: { children: '首页', href: '/' } },
+      { name: 'item1', a: { children: '导航二', href: '/page2' } },
       { name: 'item2', a: { children: '导航三', href: '' } },
       { name: 'item3', a: { children: '导航四', href: '' } },
     ],
@@ -415,7 +415,7 @@ export const Footer00DataSource = {
     children: (
       <>
         <span>
-          ©2018 <a href="http://www.zzuli.edu.cn">郑州轻工业大学</a> All Rights
+          ©2019 <a href="http://www.zzuli.edu.cn">郑州轻工业大学</a> All Rights
           Reserved
         </span>
       </>

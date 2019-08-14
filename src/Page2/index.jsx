@@ -3,21 +3,14 @@
 import React from 'react';
 import { enquireScreen } from 'enquire-js';
 
-import Nav1 from './Nav1';
-import Banner0 from './Banner0';
-import Teams0 from './Teams0';
 import Content0 from './Content0';
-import Content3 from './Content3';
-import Footer0 from './Footer0';
+import Content7 from './Content7';
 
 import {
-  Nav10DataSource,
-  Banner00DataSource,
-  Teams00DataSource,
   Content00DataSource,
-  Content30DataSource,
-  Footer00DataSource,
-} from './data.source';
+  Content70DataSource,
+} from './data.source.js';
+
 import './less/antMotionStyle.less';
 
 let isMobile;
@@ -25,7 +18,7 @@ enquireScreen((b) => {
   isMobile = b;
 });
 
-const { location } = window;
+const location = window.location;
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -56,28 +49,16 @@ export default class Home extends React.Component {
 
   render() {
     const children = [
-      <Banner0
-        id="Banner0_0"
-        key="Banner0_0"
-        dataSource={Banner00DataSource}
-        isMobile={this.state.isMobile}
-      />,
-      <Teams0
-        id="Teams0_0"
-        key="Teams0_0"
-        dataSource={Teams00DataSource}
-        isMobile={this.state.isMobile}
-      />,
       <Content0
         id="Content0_0"
         key="Content0_0"
         dataSource={Content00DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Content3
-        id="Content3_0"
-        key="Content3_0"
-        dataSource={Content30DataSource}
+      <Content7
+        id="Content7_0"
+        key="Content7_0"
+        dataSource={Content70DataSource}
         isMobile={this.state.isMobile}
       />,
     ];

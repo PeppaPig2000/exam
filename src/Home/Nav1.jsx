@@ -2,6 +2,7 @@ import React from 'react';
 import { findDOMNode } from 'react-dom';
 import TweenOne from 'rc-tween-one';
 import { Menu, Icon } from 'antd';
+import { Link } from "react-router-dom";
 
 const { Item, SubMenu } = Menu;
 
@@ -31,9 +32,14 @@ class Header extends React.Component {
       const { a, navProps } = navData[key];
       return (
         <Item {...navProps} key={i.toString()}>
-          <a {...a} href={a.link} target={a.blank && '_blank'}>
+          <Link
+              {...a}
+              href={a.href}
+              to={a.href}
+              target={a.blank && '_blank'}
+          >
             {a.children}
-          </a>
+          </Link>
         </Item>
       );
     });
