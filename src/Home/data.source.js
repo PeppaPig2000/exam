@@ -10,14 +10,13 @@ export const Nav10DataSource = {
   Menu: {
     className: 'header1-menu',
     children: [
-      { name: 'item0', a: { children: '首页', href: '/' } },
+      { name: 'item0', a: { children: '首页', href: '/home' } },
       { name: 'item1', a: { children: '导航二', href: '/page2' } },
-      { name: 'item2', a: { children: '导航三', href: '' } },
-      { name: 'item3', a: { children: '导航四', href: '' } },
+      { name: 'item2', a: { children: '导航三', href: '/page3' } },
+      { name: 'item3', a: { children: '导航四', href: '/page4' } },
     ],
   },
   mobileMenu: { className: 'header1-mobile-menu' },
-  help: { className: 'help', children: '' },
   user: {},
 };
 export const Banner00DataSource = {
