@@ -1,17 +1,16 @@
 import React, {Component} from 'react';
-import {HashRouter as Router, Route ,} from "react-router-dom";
+import {HashRouter, Route, Switch} from "react-router-dom";
 import {enquireScreen} from 'enquire-js';
-import Header from './Home/Nav1';
-import Footer from './Home/Footer0';
-import Home from './Home';
-import Page2 from './Page2';
-import Page3 from './Page3';
-import Page4 from './Page4';
+import Header from './containers/Home/Nav1';
+import Footer from './containers/Home/Footer0';
+import Home from './containers/Home';
+import Login from './containers/login'
+import Main from './containers/main'
 
 import {
     Nav10DataSource,
     Footer00DataSource,
-} from './Home/data.source.js';
+} from './containers/Home/data.source.js';
 
 let isMobile;
 enquireScreen((b) => {
@@ -35,18 +34,17 @@ class App extends Component {
 
     render() {
         return (
-            <Router>
-                <div>
+            <HashRouter>
                     <Header dataSource={Nav10DataSource} isMobile={this.state.isMobile}/>
-                    <Route exact path='/home' component={Home}/>
-                    <Route exact path="/page2" component={Page2}/>
-                    <Route exact path="/page3" component={Page3}/>
-                    <Route exact path="/page4" component={Page4}/>
-                    <Footer dataSource={Footer00DataSource} isMobile={this.state.isMobile}/>
-                </div>
-            </Router>
-        );
+                <Switch>
+                    <Route path='/home' component={Home}/>
+                    <Route path='/login' component={Login}/>
+                    <Route component={Main}/>
+                </Switch>
+                    <Footer  dataSource={Footer00DataSource} isMobile={this.state.isMobile}/>
+            </HashRouter>
+    );
     }
-}
+    }
 
-export default App;
+    export default App;
